@@ -22,7 +22,7 @@ def get(url: str):
 
 class TestService(unittest.TestCase):
     def setUp(self):
-        self.backend_url = "http://nginx"
+        self.backend_url = "http://localhost"
 
     def test_root(self):
         response = get(self.backend_url)
