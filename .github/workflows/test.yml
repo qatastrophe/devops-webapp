@@ -39,7 +39,7 @@ jobs:
     - name: Run tests
       run: |
         cd tests
-        python test_basic.py -v
+        python test_service.py -v
     
     - name: Show logs if tests failed
       if: failure()
