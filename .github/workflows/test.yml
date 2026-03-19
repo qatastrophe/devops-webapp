@@ -19,8 +19,8 @@ jobs:
     
     - name: Build and start services
       run: |
-        docker-compose up -d --build
-        docker-compose ps
+        docker compose up -d --build
+        docker compose ps
         echo "Waiting for services to start..."
     
     - name: Wait for nginx healthcheck
@@ -45,10 +45,10 @@ jobs:
       if: failure()
       run: |
         echo "=== Nginx logs ==="
-        docker-compose logs nginx --tail 50
+        docker compose logs nginx --tail 50
         echo "=== Backend logs ==="
-        docker-compose logs backend --tail 50
+        docker compose logs backend --tail 50
     
     - name: Stop services
       if: always()
-      run: docker-compose down -v
+      run: docker compose down -v
