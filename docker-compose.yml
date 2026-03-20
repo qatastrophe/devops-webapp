@@ -11,6 +11,11 @@ services:
       timeout: 3s
       retries: 3
       start_period: 5s
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
 
   nginx:
     build: ./nginx
@@ -29,7 +34,11 @@ services:
       timeout: 3s
       retries: 3
       start_period: 5s
-
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 128M
 networks:
   webapp-network:
     driver: bridge

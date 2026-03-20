@@ -1,6 +1,7 @@
-FROM nginx:alpine
+FROM nginx:1.25.4-alpine
 
-RUN rm /etc/nginx/conf.d/default.conf
+RUN rm -rf /etc/nginx/conf.d/* \
+ && rm -rf /var/cache/apk/*
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
